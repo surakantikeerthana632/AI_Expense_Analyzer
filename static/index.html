@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>AI Expense Analyzer</title>
+
+    <link rel="stylesheet"
+          href="/static/style.css">
+
+</head>
+
+
+<body>
+
+    <header>
+
+        <h1>AI Expense Analyzer</h1>
+
+        <p>
+            Track, analyze and understand your spending
+        </p>
+
+    </header>
+
+
+    <main>
+
+
+        <!-- Expense Entry -->
+
+        <section class="card">
+
+            <h2>Add Expense</h2>
+
+            <form id="expenseForm">
+
+                <label>
+                    Amount
+                </label>
+
+                <input
+                    type="number"
+                    id="amount"
+                    placeholder="Enter amount"
+                    min="0.01"
+                    step="0.01"
+                    required
+                >
+
+
+                <label>
+                    Date
+                </label>
+
+                <input
+                    type="date"
+                    id="date"
+                    required
+                >
+
+
+                <label>
+                    Category
+                </label>
+
+                <select id="category" required>
+
+                    <option value="">
+                        Select Category
+                    </option>
+
+                    <option value="Food">
+                        Food
+                    </option>
+
+                    <option value="Travel">
+                        Travel
+                    </option>
+
+                    <option value="Shopping">
+                        Shopping
+                    </option>
+
+                    <option value="Education">
+                        Education
+                    </option>
+
+                    <option value="Entertainment">
+                        Entertainment
+                    </option>
+
+                    <option value="Bills">
+                        Bills
+                    </option>
+
+                    <option value="Other">
+                        Other
+                    </option>
+
+                </select>
+
+
+                <button type="submit">
+                    Add Expense
+                </button>
+
+            </form>
+
+
+            <p id="message"></p>
+
+        </section>
+
+
+
+        <!-- Dashboard -->
+
+        <section class="dashboard">
+
+            <div class="summary-card">
+
+                <h3>Total Spending</h3>
+
+                <p id="totalSpending">
+                    ₹0.00
+                </p>
+
+            </div>
+
+
+            <div class="summary-card">
+
+                <h3>Total Transactions</h3>
+
+                <p id="transactionCount">
+                    0
+                </p>
+
+            </div>
+
+
+            <div class="summary-card">
+
+                <h3>Top Category</h3>
+
+                <p id="topCategory">
+                    -
+                </p>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- Analytics -->
+
+        <section class="card">
+
+            <h2>Category-wise Spending</h2>
+
+            <div id="categoryChart"
+                 class="chart-container">
+            </div>
+
+        </section>
+
+
+
+        <section class="card">
+
+            <h2>Monthly Spending</h2>
+
+            <div id="monthlyChart"
+                 class="chart-container">
+            </div>
+
+        </section>
+
+
+
+        <!-- Expense Records -->
+
+        <section class="card">
+
+            <h2>Expense Records</h2>
+
+            <div class="table-container">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+
+                            <th>Date</th>
+                            <th>Category</th>
+                            <th>Amount</th>
+                            <th>Action</th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody id="expenseTable">
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- AI Insights -->
+
+        <section class="card ai-card">
+
+            <h2>
+                🤖 AI Spending Insights
+            </h2>
+
+
+            <h3>
+                High Spending Categories
+            </h3>
+
+            <ul id="highSpending">
+            </ul>
+
+
+            <h3>
+                Spending Patterns
+            </h3>
+
+            <ul id="patterns">
+            </ul>
+
+
+            <h3>
+                Suggestions
+            </h3>
+
+            <ul id="suggestions">
+            </ul>
+
+
+            <p id="aiMessage"></p>
+
+        </section>
+
+
+    </main>
+
+
+    <script src="/static/script.js"></script>
+
+</body>
+
+</html>
